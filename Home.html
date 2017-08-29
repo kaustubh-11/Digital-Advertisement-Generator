@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+   <title>Digital111 Add Maker</title>
+   <script src="jquery.js"></script>
+   <script src = "html2canvas.js"></script>
+   <script type="text/javascript" src="main.js"></script>
+   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+   <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+
+   <link rel="stylesheet" type="text/css" href="home.css"></link>
+   <!-- <link rel="stylesheet" type="text/css" href="newAdd.css"></link> -->
+   <link rel="icon" href="img/img1">
+
+  <style>
+
+
+   </style>
+ </head>
+
+ <body>
+         <div class="divTop" id="left1" >
+
+         <!-- <p > -->
+         <img class="img" src="img/img1">
+         <label class="text">AdCreate</label>
+         <input class="button" type="button" value="LOGOUT">
+
+                     <!-- <input type="text" style="float:right" placeholder="Enter username">
+                     <input type="text" style="float:right" placeholder="Enter password"> -->
+                     <!-- <input type="button" value="LOGIN" style="float:right;">  -->
+         <!-- </p> -->
+
+         </div>
+
+         <div class="divLeft" id="left2">
+            
+         <a class="active">Home</a>
+         <a id = "newAdd">Generate Add</a>
+         <a >Edit Add</a>
+         <a >View Add</a>
+         <a id="reportAdd">Report Generation</a>
+
+         </div>
+
+      <div class="divRight" id="left3" style="overflow:auto">
+      <!-- <input type="file" id = "fileUpload" value="" />
+      <input type="button" id="button1" value="Click Me" /> -->
+	   </div>
+
+      <script type="text/javascript">
+            function resize()
+            {
+                var heights = window.innerHeight;
+                document.getElementById("left2").style.height = heights + "px";
+				    document.getElementById("left3").style.height = heights + "px";
+            }
+
+            resize();
+
+            window.onresize = function() {
+                resize();
+            };
+         </script>
+ </body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script>
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#pm").slideToggle("fast");
+		});
+	});
+	</script>
+	
+	<script>
+	var dpts = [
+			{label:"2006",y:0},
+			{label:"2007", y: 2.7},
+			{label:"2008", y: 3.2},
+			{label:"2009", y: 3},
+			{label:"2010",y: 4},
+			{label:"2011",y: 7},
+			{label:"2012", y:10},
+			{label:"2013",y:8},
+			{label:"2014",y:8.5},
+			{label:"2015",y:9},			
+			{label:"2016",y:13},
+			{label:"2017",y:13.4}
+		];
+	window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {theme : "theme2", 
+	animationEnabled : true,
+	title:{text: "Current Status"},
+	axisY:{title:"No. of clicks",suffix : "K"},
+	axisX:{title:"Time span"},
+	data: [{type: "line", lineThickness : 1.75,markerSize : 12,dataPoints: dpts}],
+			//Also can use <prefix : "$",>
+	});
+		chart.render();
+	}
+	</script>
+
+</head>
+<body>
+	<div id = "chartContainer" style ="height:50%;width:85%"></div>
+</body>

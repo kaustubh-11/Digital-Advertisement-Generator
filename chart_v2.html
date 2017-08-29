@@ -1,0 +1,103 @@
+<html>
+<head>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script>
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#pm").slideToggle("fast");
+		});
+	});
+	</script>
+
+	<script>
+
+	window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {theme : "theme2",animationEnabled:true,
+	title:{text: "Current Status"},data: [{type: "line", lineThickness : 1.75,markerSize : 12,
+		dataPoints: [
+			{label:"2006",y:0},
+			{label:"2007", y: 2.7},
+			{label:"2008", y: 3.2},
+			{label:"2009", y: 3},
+			{label:"2010",y: 4},
+			{label:"2011",y: 7},
+			{label:"2012", y:10},
+			{label:"2013",y:8},
+			{label:"2014",y:8.5},
+			{label:"2015",y:9},
+			{label:"2016",y:13},
+			{label:"2017",y:13.4}
+		]
+	}],
+	axisY:{label:"No. of clicks",suffix : "K"}		//Also can use <prefix : "$",>
+	});
+		chart.render();
+	}
+	</script>
+
+</head>
+
+<style>
+
+	table {
+		border: 1px solid black;
+	    font-family: arial, sans-serif;
+	    border-collapse: collapse;
+	    width: 100%;
+	}
+
+	td, th {
+	    border: 1px solid #dddddd;
+	    text-align: left;
+	    padding: 8px;
+	}
+
+	tr:nth-child(odd) {
+	    background-color: #C1E8EE  ;
+	}
+
+</style>
+
+<body>
+
+	<div id="reportAdd">
+		<center><div id = "chartContainer" style ="height:50%;width:80%"></div>
+		<br>
+		<button>Details</button><br><br>
+
+		<div id = "pm" style = "width:85%;" hidden>
+			<table>
+			<colgroup>
+				<col style = "width:50%"/>
+				<col style = "width:50%"/>
+			</colgroup>
+				<tr>
+					<th>Site Usage</th>
+					<th></th>
+
+
+				</tr>
+				<tr>
+					<td>14,408 Visits</td>
+					<td>59.43% Bounce Rate</td>
+
+				</tr>
+				<tr>
+					<td>33,498 Pageviews</td>
+					<td>00:03:08 Avg. Time on Site</td>
+
+				</tr>
+				<tr>
+					<td>2.32 Pages/Visit</td>
+					<td>45.38% % New Visits</td>
+
+				</tr>
+			</table>
+
+		</div></center>
+	</div><!-- ReportADD by Prashik ends here -->
+</body>
+
+</html>

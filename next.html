@@ -1,0 +1,227 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<body>
+
+	<div id="reportAdd">
+		<center><div id = "chartContainer" name="loki" style ="height:50%;width:80%"></div>
+	</div><!-- ReportADD by Prashik ends here -->
+
+
+
+	<div id = "newAdd" class = "category" style="overflow:auto">
+
+		<fieldset class="sides">
+			<div class="container"><h2><I>&#160;Instruction</I></h2></div>
+			<div>
+				<ol>
+					<li>Initially, the selection of the category is the primary and important step.</li>
+					<li class="liSpacer">After selecting it, the next step will be selection of the template.</li>
+					<li class="liSpacer">Similarly, the tag line and other specifications can be customised.</li>
+					<li class="liSpacer">Once all these steps are completed, by clicking the submit button, the advertise will be generated and will be displayed on the screen</li>
+					<li class="liSpacer">Hence, after confirming the ad it can be posted on sited sugested by the client or it can be done automatically.</li>
+				</ol>
+			</div>
+		</fieldset>
+
+		<fieldset class="sides">
+		<div class="container">
+			<h2>
+			<I><input type = "checkbox" id = "cat"  onchange = myexpress()>Category</I>
+			</h2>
+		</div>
+
+		<div id = "logos" style = "display:none">
+		<table align="left">
+			<tr>
+				<td><img id = "entertainment" class = "newAdd" src = "Images/Original/Music.jpg" title = "Entertainment" onclick = "showTemplate(id)"></td>
+				<td><img id = "technology" class = "newAdd" src = "Images/Original/Technology_mobile.jpg" title="Technology" onclick = "showTemplate(id)"></td>
+				<td><img id = "automibile" class = "newAdd" src = "Images/Original/Automobile_bmw.jpg" title="Automobile" onclick = "showTemplate(id)"></td>
+				<td><img id = "consultant" class = "newAdd" src = "Images/Original/Consultant.jpg" title="Consultancy" onclick = "showTemplate(id)"></td>
+			</tr>
+			<tr>
+				<td align = "center"><h3>Entertainment</h3></td>
+				<td align = "center"><h3>Technology</h3></td>
+				<td align = "center"><h3>Automobile</h3></td>
+				<td align = "center"><h3>Consultancy</h3></td>
+			</tr>
+			<tr>
+				<td><img id = "transport" class = "newAdd" src = "Images/Original/Transport_multi.png" title="Transport" onclick = "showTemplate(id)"></a></td>
+				<td><img id = "security" class = "newAdd" src = "Images/Original/Security_lock.png" title="Security" onclick = "showTemplate(id)"></a></td>
+				<td><img id = "event" class = "newAdd" src = "Images/Original/Event.png" title="Events" onclick = "showTemplate(id)"></td>
+			</tr>
+
+			<tr>
+				<td align = "center"><h3>Transport</h3></td>
+				<td align = "center"><h3>Security</h3></td>
+				<td align = "center"><h3>Events</h3></td>
+			</tr>
+		</table>
+		</div>
+		</fieldset>
+		</div>
+
+
+		<div id = "loadTemplate_entertainment">
+
+			<h3 class="h1_h2_template_sagar">Choose your template</h3>
+	 		<br></br>
+	 		<img class="img_template_images" src = "banner1.jpeg" height=150 width=150/>
+	 		<img class="img_template_images" id = "template2" height=150 width=150 style="cursor:pointer" src = "banner2.jpeg" onclick = "loadTemplate(id)"/>
+	 		<img class="img_template_images" src = "banner3.jpeg" height=150 width=150/>
+			<img class="img_template_images" src = "banner4" height=150 width=150/>
+
+		</div>
+
+		<div id = "loadTemplate_technology">
+
+		</div>
+
+		<div id = "loadTemplate_automibile">
+
+		</div>
+
+		<div id = "loadTemplate_consultant">
+
+		</div>
+
+		<div id = "loadTemplate_transport">
+
+		</div>
+
+		<div id = "loadTemplate_security">
+
+		</div>
+
+		<div id = "loadTemplate_event">
+
+		</div>
+
+		<div id = "template2" class = "divright">
+
+
+				<div id = "addImage" style = "background-color: grey">
+
+					<table  style = "width :70%">
+						<tr >
+							<td align = "left">
+
+								<input type = "text" id = "title" value = "Enter your title" size = 15 /><br/>
+								<input type = "text" id = "subtitle" value = "Subtitle" size = 10/><br/>
+								<textarea rows="10" cols = "35" style = "font-size: 18pt" id = "content"> Put your content here</textarea><br/>
+							 	<img src = "" id = "logo" width = "100" height = "100"></img>
+
+							</td>
+							<td>
+								<img id = "myDesign" src = "" width = 300 height = 300></img>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+
+				<br>
+
+			<a href = "saveimage" class = "test123"></a>
+			<button type = "button" id = "mylogo" value = "Logo" class = "upload" onclick = "selectLogo()" >LOGO</button><!--  onclick = "upLoadLogo()"-->
+			<button type = "button" value = "Design" class = "upload" onclick = "selectImage()">DESIGN</button>
+			<button type = "button" value = "SAVE" onClick = "generate()">GENERATE</button>
+			<button type = "button" onClick = "fillClientDetails()" >NEXT</button>
+		    <input type = "file" id = "logoImg" value = "" class = "tohide" onchange = "uploadLogo(this.files)"/><br/>
+		    <input type = "file" accept = 'image/*' class = "tohide" id = "designSelect" onchange = "uploadImg(this.files)"/><br/>
+		</div>
+
+<!-- MAYURI  -->
+<div id = "clientDetails">
+
+  <center>
+	 <fieldset style="width:50%; border:10px groove; align:center">
+	 <form id="myForm" onsubmit ="return validate()" onreset = "resetAll()">
+	  <center><h2><u>Advertisement Data</u></h2></center>
+	 <tr style="align:left">
+	<td><b>Date</b></td>
+	<td> <input type = "date" id= "date"></td>
+	</tr>
+  <fieldset style= "text-align left;">
+  <legend><b>Customer Details</b></legend>
+	<table>
+	<tr>
+		<td><b>first Name</b> </td>
+		<td> <input type = "text" id = "fName"  minlength="5" > </td>
+		<td><b>Last Name</b> </td>
+		<td> <input type = "text" id = "lName"> </td>
+	<tr>
+	  <td><b>Contact No:</b></td>
+		<td><input type ="number" id="mo_num" maxlength="10"></td>
+		  <td><b>Customor Id:</b></td>
+		<td><input type="text" id="ID"></td>
+	</tr>
+	 <tr>
+		<td><b>E-Mail:</b></td>
+		<td> <input type = "text" id= "email" ></td>
+		<td><b>Advertisement Name:</b></td>
+		<td><input type="text" id="adv"></td>
+	</tr>
+	</table>
+	</fieldset>
+
+
+
+	<fieldset>
+	<legend><b>Advertisement details</b></legend>
+	<table>
+		<tr>
+		 <b>period of advertising:</b><br>
+		<td><b>Start date</b></td>
+		<td><input type= "date" id= "sDate"><br></td>
+		</tr>
+		<tr>
+		<td><b>End date</b></td><td><input type = "date" id="eDate"></td>
+
+		</tr>
+		 </table>
+
+
+	</fieldset>
+	<fieldset id= tFieldset>
+	<legend><b>Target Audience</b></legend>
+
+	 <div id= "target">
+	  <table>
+		  <tr>
+				<td><input type = "checkbox" value= "stud">
+			  <b>Students</b></td>
+			  <td><input type = "checkbox" value = "buisness">
+			  <b>Buissness</b></td>
+			  <td><input type = "checkbox" value = "women">
+			  <b>women</b></td>
+		  </tr>
+		  <tr>
+			  <td><input type = "Checkbox" value = "kids">
+			  <b>Kids</b>
+			  <td><input type = "Checkbox" value = "Men">
+			  <b>Men</b></td>
+			  <td><input type = "Checkbox" value = "colleges">
+			  <b>colleges</b></td>
+		  </tr>
+			  <td><input type = "button" value = "more" id= "ad_check" onclick= add_text()>
+			  <b>Other</b></td>
+
+	  </table>
+	</div>
+
+	 </fieldset>
+
+	  <center><input type ="reset" id="Reset">
+		<input type = "submit" id="submit" ></center>
+	 </fieldset>
+	 </center>
+</div>
+
+</body>
+</html>
